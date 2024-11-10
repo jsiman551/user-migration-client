@@ -26,7 +26,7 @@ const Login: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
             <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 rounded shadow-lg">
                 <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100">CSV User Migration</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

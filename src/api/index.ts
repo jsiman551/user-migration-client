@@ -43,7 +43,7 @@ export const uploadCSVFile = async (file: File, token: string | null): Promise<U
     const formData = new FormData();
     formData.append('file', file);
 
-    const response = await axios.post('/upload', formData, {
+    const response = await axios.post(`${BASE_API_URL}/upload`, formData, {
         headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data',
