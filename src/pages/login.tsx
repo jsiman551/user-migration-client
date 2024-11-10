@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button, Input } from '@headlessui/react';
 import { loginCall } from '../api';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginFormInputs {
     email: string;
@@ -9,6 +10,7 @@ interface LoginFormInputs {
 }
 
 const Login: React.FC = () => {
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginFormInputs>();
     const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +18,11 @@ const Login: React.FC = () => {
         setError(null);
 
         //fetch login
-        await loginCall(data, setError);
+        const response = await loginCall(data, setError);
+
+        if (response) {
+            navigate('/dashboard');
+        }
     };
 
     return (

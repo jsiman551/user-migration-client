@@ -17,6 +17,7 @@ export const loginCall = async (data: LoginFormInputs, setError: (arg0: string) 
         if (response.data.ok) {
             const token = response.data.data.token;
             localStorage.setItem('token', token);
+            return true;
         }
 
     } catch (err) {
