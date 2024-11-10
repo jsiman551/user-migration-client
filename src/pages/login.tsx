@@ -36,7 +36,7 @@ const Login: React.FC = () => {
                         <Input
                             id="email"
                             type="email"
-                            {...register('email', { required: 'El email es obligatorio' })}
+                            {...register('email', { required: 'Email is required' })}
                             className={`w-full p-2 mt-1 border rounded ${errors.email ? 'border-red-500' : 'border-gray-300'} dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100`}
                         />
                         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
@@ -46,7 +46,7 @@ const Login: React.FC = () => {
                         <Input
                             id="password"
                             type="password"
-                            {...register('password', { required: 'La contraseña es obligatoria' })}
+                            {...register('password', { required: 'Password is required' })}
                             className={`w-full p-2 mt-1 border rounded ${errors.password ? 'border-red-500' : 'border-gray-300'} dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100`}
                         />
                         {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
@@ -56,7 +56,7 @@ const Login: React.FC = () => {
                         className="w-full px-4 py-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
                         disabled={isSubmitting}
                     >
-                        {isSubmitting ? 'Iniciando sesión...' : 'Login'}
+                        {isSubmitting ? 'Initializing...' : 'Login'}
                     </Button>
                 </form>
             </div>
