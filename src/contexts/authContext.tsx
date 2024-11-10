@@ -6,6 +6,7 @@ interface AuthContextProps {
     isAuthenticated: boolean;
     login: (token: string) => void;
     logout: () => void;
+    token: string | null;
 }
 
 interface AuthProviderProps {
@@ -16,10 +17,11 @@ interface JWTPayload {
     exp: number;
 }
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const token = localStorage.getItem('token');
     const navigate = useNavigate();
 
     const isTokenValid = (token: string) => {
@@ -34,7 +36,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
         if (token && isTokenValid(token)) {
             setIsAuthenticated(true);
         } else {
@@ -59,7 +60,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, token }}>
             {children}
         </AuthContext.Provider>
     );

@@ -1,9 +1,10 @@
-const Dashboard = () => {
+import React from 'react';
+import UploadCSV from '../components/UploadCSV';
+
+const Dashboard: React.FC = () => {
     return (
-        <div>
-            hola
-        </div>
-    )
-}
+        <UploadCSV />
+    );
+};
 
 export default Dashboard;
