@@ -3,10 +3,7 @@ import { useAuth } from '../contexts/authContext';
 import { uploadCSVFile } from '../api';
 import { AxiosError } from 'axios';
 import { Button, Input } from '@headlessui/react';
-
-interface UploadCSVProps {
-    onUploadSuccess: (successCount: number, errors: any[]) => void;
-}
+import { ErrorListProps, UploadCSVProps } from '../types';
 
 const UploadCSV: React.FC<UploadCSVProps> = ({ onUploadSuccess }) => {
     const [file, setFile] = useState<File | null>(null);
@@ -35,7 +32,7 @@ const UploadCSV: React.FC<UploadCSVProps> = ({ onUploadSuccess }) => {
 
             if (response.ok) {
                 const successCount = response.data.success.length;
-                const errors = response.data.errors || [];
+                const errors = response.data.errors as ErrorListProps[] || [];
                 onUploadSuccess(successCount, errors);
                 setMessage('Users uploaded successfully.');
             } else {
@@ -56,12 +53,12 @@ const UploadCSV: React.FC<UploadCSVProps> = ({ onUploadSuccess }) => {
         <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-700">
             <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 rounded shadow-lg">
                 <h2 className="text-2xl font-bold text-center text-gray-700 dark:text-gray-200">
-                    Sistema de Carga de Datos
+                    Data Upload App
                 </h2>
                 <form className="space-y-4" onSubmit={handleUpload}>
                     <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Selecciona un archivo de carga
+                            Select a CSV file
                         </label>
                         <Input
                             type="file"

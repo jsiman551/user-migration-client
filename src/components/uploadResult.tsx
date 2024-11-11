@@ -1,10 +1,6 @@
 import { Button } from '@headlessui/react';
 import React from 'react';
-
-interface UploadResultProps {
-    successCount: number;
-    onClose: () => void;
-}
+import { UploadResultProps } from '../types';
 
 const UploadResult: React.FC<UploadResultProps> = ({ successCount, onClose }) => {
     return (

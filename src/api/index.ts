@@ -1,12 +1,8 @@
 import axios, { AxiosError } from "axios";
 import { BASE_API_URL } from "../consts";
+import { LoginFormInputs, UploadResponse } from "../types";
 
 //login call function
-interface LoginFormInputs {
-    email: string;
-    password: string;
-}
-
 export const loginCall = async (data: LoginFormInputs, setError: (arg0: string) => void) => {
 
     const { email, password } = data;
@@ -30,15 +26,6 @@ export const loginCall = async (data: LoginFormInputs, setError: (arg0: string) 
 }
 
 //CSV upload function
-export interface UploadResponse {
-    ok: boolean;
-    message: string;
-    data: {
-        success: Array<{ row: number; id: number; name: string; email: string; age: number }>;
-        errors: Array<unknown>;
-    };
-}
-
 export const uploadCSVFile = async (file: File, token: string | null): Promise<UploadResponse> => {
     const formData = new FormData();
     formData.append('file', file);

@@ -3,11 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button, Input } from '@headlessui/react';
 import { loginCall } from '../api';
 import { useNavigate } from 'react-router-dom';
-
-interface LoginFormInputs {
-    email: string;
-    password: string;
-}
+import { LoginFormInputs } from '../types';
 
 const Login: React.FC = () => {
     const navigate = useNavigate();

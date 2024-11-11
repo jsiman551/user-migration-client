@@ -3,15 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { Button, Input } from '@headlessui/react';
 import { useAuth } from '../contexts/authContext';
 import { retryUploadCSVFile } from '../api';
-
-interface ErrorRowProps {
-    rowNumber: number;
-    name: string;
-    email: string;
-    age: string;
-    errorMessages: string;
-    errorPointer: string;
-}
+import { ErrorRowProps } from '../types';
 
 const ErrorRow: React.FC<ErrorRowProps> = ({
     rowNumber,

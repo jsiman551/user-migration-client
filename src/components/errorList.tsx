@@ -1,18 +1,8 @@
 import React from 'react';
 import ErrorRow from './errorRow';
+import { ErrorListComponentProps } from '../types';
 
-interface ErrorListProps {
-    errors: Array<{
-        row: number;
-        name: string;
-        email: string;
-        age: string;
-        title: string;
-        source: { pointer: string };
-    }>;
-}
-
-const ErrorList: React.FC<ErrorListProps> = ({ errors }) => {
+const ErrorList: React.FC<ErrorListComponentProps> = ({ errors }) => {
     return (
         <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">The following records encountered errors:</h3>

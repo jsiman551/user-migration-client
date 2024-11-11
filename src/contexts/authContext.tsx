@@ -1,21 +1,7 @@
-import React, { createContext, useState, useEffect, ReactNode, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-
-interface AuthContextProps {
-    isAuthenticated: boolean;
-    login: (token: string) => void;
-    logout: () => void;
-    token: string | null;
-}
-
-interface AuthProviderProps {
-    children: ReactNode;
-}
-
-interface JWTPayload {
-    exp: number;
-}
+import { AuthContextProps, AuthProviderProps, JWTPayload } from '../types';
 
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
