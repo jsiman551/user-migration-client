@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Frontend: CSV File Upload Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Este proyecto es la interfaz frontend de una aplicación web que permite a los usuarios cargar archivos CSV, revisar y corregir errores de validación en los registros, y volver a intentarlo. La autenticación se maneja mediante JWT y la interfaz está construida con React, Vite, Tailwind CSS y TypeScript. Los componentes son dinámicos y permiten una experiencia de usuario interactiva y fluida.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías
 
-## Expanding the ESLint configuration
+- **React**: Librería de JavaScript para construir interfaces de usuario interactivas.
+- **Vite**: Bundler de aplicaciones modernas con enfoque en velocidad.
+- **TypeScript**: Para tipado estático y mayor seguridad en el código.
+- **Tailwind CSS**: Framework de CSS de utilidad para diseñar interfaces modernas y responsivas.
+- **React Router**: Librería para manejo de rutas y navegación en la aplicación.
+- **React Context API**: Para manejar el estado global de la aplicación, como la autenticación de usuario.
+- **React Hook Form**: Para gestionar formularios de manera sencilla y eficiente.
+- **Axios**: Para realizar solicitudes HTTP al backend.
+- **Vitest**: Herramienta para realizar pruebas unitarias y de integración.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalación y Configuración
 
-- Configure the top-level `parserOptions` property like this:
+### Requisitos Previos
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Asegúrate de tener instalados los siguientes programas:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Node.js** (versión 16 o superior)
+- **npm** o **yarn** (gestores de paquetes)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Pasos para ejecutar el proyecto
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd <NOMBRE_DEL_DIRECTORIO>
+  ```
+
+2. **Instalar las dependencias:**
+
+   ```bash
+    npm install
+  ```
+
+3. **Construir el proyecto para producción:**
+
+  ```bash
+  npm run build
+  ```
+
+4. **Pruebas:**
+
+  ```bash
+  npm run test
+  ```
