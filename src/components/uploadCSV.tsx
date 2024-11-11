@@ -13,7 +13,15 @@ const UploadCSV: React.FC<UploadCSVProps> = ({ onUploadSuccess }) => {
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
-            setFile(e.target.files[0]);
+            const selectedFile = e.target.files[0];
+
+            if (selectedFile.name.endsWith('.csv')) {
+                setFile(selectedFile);
+                setMessage(null);
+            } else {
+                setFile(null);
+                setMessage("Please select a CSV file.");
+            }
         }
     };
 
