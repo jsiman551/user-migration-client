@@ -38,6 +38,7 @@ const ErrorRow: React.FC<ErrorRowProps> = ({
         !isSuccess ? <form
             className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-5"
             onSubmit={handleSubmit(onSubmit)}
+            data-testid={`error-row-${rowNumber}`}
         >
             <span className="font-semibold sm:w-1/12 text-center sm:text-left">Row {rowNumber}</span>
 
@@ -50,6 +51,7 @@ const ErrorRow: React.FC<ErrorRowProps> = ({
                         <Input
                             {...field}
                             className={`text-black border ${errorPointer === 'name' ? 'border-red-500' : ''}`}
+                            data-testid="Name"
                         />
                     )}
                 />
@@ -71,6 +73,7 @@ const ErrorRow: React.FC<ErrorRowProps> = ({
                         <Input
                             {...field}
                             className={`text-black border ${errorPointer === 'email' ? 'border-red-500' : ''}`}
+                            data-testid="Email"
                         />
                     )}
                 />
@@ -93,6 +96,7 @@ const ErrorRow: React.FC<ErrorRowProps> = ({
                             {...field}
                             type="number"
                             className={`text-black border ${errorPointer === 'age' ? 'border-red-500' : ''}`}
+                            data-testid="Age"
                         />
                     )}
                 />
