@@ -7,7 +7,7 @@ const mockProps = {
     rowNumber: 1,
     name: 'John Doe',
     email: 'john.doe@example.com',
-    age: 30,
+    age: "30",
     errorMessages: 'Missing data',
     errorPointer: 'name',
 };
@@ -37,7 +37,7 @@ describe('ErrorRow Component', () => {
 
             expect(screen.getByTestId('Name')).toHaveValue(mockProps.name);
             expect(screen.getByTestId('Email')).toHaveValue(mockProps.email);
-            expect(screen.getByTestId('Age')).toHaveValue(mockProps.age);
+            expect(screen.getByTestId('Age')).toHaveValue(Number(mockProps.age));
         });
     });
 
