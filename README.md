@@ -1,52 +1,52 @@
 # Frontend: CSV File Upload Application
 
-## Descripción
+## Description
 
-Este proyecto es la interfaz frontend de una aplicación web que permite a los usuarios cargar archivos CSV, revisar y corregir errores de validación en los registros, y volver a intentarlo. La autenticación se maneja mediante JWT y la interfaz está construida con React, Vite, Tailwind CSS y TypeScript. Los componentes son dinámicos y permiten una experiencia de usuario interactiva y fluida.
+This project is the frontend interface of a web application that allows users to upload CSV files, review and correct validation errors in the records, and retry. Authentication is handled using JWT and the interface is built with React, Vite, Tailwind CSS, and TypeScript. The components are dynamic, allowing for an interactive and fluid user experience.
 
-## Tecnologías
+## Technologies
 
-- **React**: Librería de JavaScript para construir interfaces de usuario interactivas.
-- **Vite**: Bundler de aplicaciones modernas con enfoque en velocidad.
-- **TypeScript**: Para tipado estático y mayor seguridad en el código.
-- **Tailwind CSS**: Framework de CSS de utilidad para diseñar interfaces modernas y responsivas.
-- **React Router**: Librería para manejo de rutas y navegación en la aplicación.
-- **React Context API**: Para manejar el estado global de la aplicación, como la autenticación de usuario.
-- **React Hook Form**: Para gestionar formularios de manera sencilla y eficiente.
-- **Axios**: Para realizar solicitudes HTTP al backend.
-- **Vitest**: Herramienta para realizar pruebas unitarias y de integración.
+- **React**: JavaScript library for building interactive user interfaces.
+- **Vite**: Modern application bundler with a focus on speed.
+- **TypeScript**: For static typing and greater code security.
+- **Tailwind CSS**: Utility-first CSS framework for designing modern and responsive interfaces.
+- **React Router**: Library for routing and navigation within the application.
+- **React Context API**: To manage the global state of the application, such as user authentication.
+- **React Hook Form**: For managing forms in a simple and efficient way.
+- **Axios**: For making HTTP requests to the backend.
+- **Vitest**: Tool for performing unit and integration tests.
 
-## Instalación y Configuración
+## Installation and Configuration
 
-### Requisitos Previos
+### Prerequisites
 
-Asegúrate de tener instalados los siguientes programas:
+Make sure you have the following programs installed:
 
-- **Node.js** (versión 16 o superior)
-- **npm** o **yarn** (gestores de paquetes)
+- **Node.js** (version 16 or higher)
+- **npm** or **yarn** (package managers)
 
-### Pasos para ejecutar el proyecto
+### Steps to run the project
 
-1. **Clonar el repositorio:**
+1. **Clone the repository:**
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_DIRECTORIO>
+   git clone <URL_OF_THE_REPOSITORY>
+   cd <NAME_OF_THE_DIRECTORY>
   ```
 
-2. **Instalar las dependencias:**
+2. **Install dependencies:**
 
    ```bash
     npm install
   ```
 
-3. **Construir el proyecto para producción:**
+3. **Build the project for production:**
 
   ```bash
   npm run build
   ```
 
-4. **Pruebas:**
+4. **Tests:**
 
   ```bash
   npm run test
