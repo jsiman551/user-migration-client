@@ -29,14 +29,14 @@ Make sure you have the following programs installed:
 
 1. **Clone the repository:**
 
-   ```bash
+  ```bash
    git clone <URL_OF_THE_REPOSITORY>
    cd <NAME_OF_THE_DIRECTORY>
   ```
 
 2. **Install dependencies:**
 
-   ```bash
+  ```bash
     npm install
   ```
 
